@@ -1,1 +1,4 @@
-dev branch dev test
+<<<<<<< HEAD
+=======
+dev branch branch
+>>>>>>> conflict
