@@ -9,6 +9,8 @@ pipeline {
         stage("Create an EKS Cluster") {
             steps {
                 script {
+                    #Give the location of terraform scripts directory relative 
+                    #to the repo
                     dir('part2-cluster-from-terraform-and-jenkins/terraform-for-cluster') {
                         sh "terraform init"
                         sh "terraform apply -auto-approve"
