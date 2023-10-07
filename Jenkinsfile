@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     dir('part2-cluster-from-terraform-and-jenkins/terraform-for-cluster') {
-                        sh "terraform destroy - auto-approve"
+                        sh "terraform destroy --auto-approve"
                     }
                 }
             }
