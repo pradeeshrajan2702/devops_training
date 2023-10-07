@@ -10,19 +10,7 @@ pipeline {
             steps {
                 script {
                     dir('part2-cluster-from-terraform-and-jenkins/terraform-for-cluster') {
-                        sh "terraform init"
-                        sh "terraform apply -auto-approve"
-                    }
-                }
-            }
-        }
-        stage("Deploy to EKS") {
-            steps {
-                script {
-                    dir('part2-cluster-from-terraform-and-jenkins/kubernetes') {
-                        sh "aws eks update-kubeconfig --name myjenkins-server-eks-cluster"
-                        sh "kubectl apply -f deployment.yaml"
-                        sh "kubectl apply -f service.yaml"
+                        sh "terraform destroy - auto-approve"
                     }
                 }
             }
