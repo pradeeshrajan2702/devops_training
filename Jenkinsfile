@@ -19,8 +19,6 @@ pipeline {
         stage("Deploy to EKS") {
             steps {
                 script {
-                    #Give the location of kubernetes scripts directory relative 
-                    #to the repo
                     dir('part2-cluster-from-terraform-and-jenkins/kubernetes') {
                         sh "aws eks update-kubeconfig --name myapp-eks-cluster"
                         sh "kubectl apply -f deployment.yaml"
